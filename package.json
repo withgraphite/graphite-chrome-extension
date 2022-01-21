@@ -1,0 +1,31 @@
+{
+  "name": "graphite-chrome-extension",
+  "version": "0.1.0",
+  "license": "None",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "homepage": "https://github.com/screenplaydev/graphite-chrome-extension",
+  "private": true,
+  "scripts": {
+    "build": "NODE_ENV=\"production\" node ./scripts/esbuild.js",
+    "lint": "eslint src --quiet --ext .ts --cache",
+    "prepublishOnly": "yarn build"
+  },
+  "files": [
+    "dist"
+  ],
+  "devDependencies": {
+    "@types/chrome": "^0.0.129",
+    "@typescript-eslint/eslint-plugin": "^4.15.2",
+    "@typescript-eslint/parser": "^4.15.2",
+    "esbuild": "^0.8.46",
+    "eslint": "^7.20.0",
+    "fs-extra": "^10.0.0",
+    "prettier": "2.3.2",
+    "ts-node": "^9.0.0",
+    "typescript": "^4.2.4"
+  },
+  "repository": "git@github.com:screenplaydev/graphite-chrome-extension.git",
+  "author": "Tomas Reimers <tomas@tomasreimers.com>",
+  "packageManager": "yarn@3.1.1"
+}

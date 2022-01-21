@@ -1,0 +1,33 @@
+[
+  {
+    "id": 1,
+    "priority": 1,
+    "action": {
+      "type": "allow"
+    },
+    "condition": {
+      "regexFilter": "^.*\\?.*no-redirect",
+      "isUrlFilterCaseSensitive": false,
+      "resourceTypes": [
+        "main_frame"
+      ]
+    }
+  },
+  {
+    "id": 2,
+    "priority": 1,
+    "action": {
+      "type": "redirect",
+      "redirect": {
+        "regexSubstitution": "https://app.graphite.dev/github/pr/\\1/\\2/\\3"
+      }
+    },
+    "condition": {
+      "regexFilter": "^https:\\/\\/github.com\\/(.*)\\/(.*)\\/pull\\/([0-9]*)",
+      "isUrlFilterCaseSensitive": false,
+      "resourceTypes": [
+        "main_frame"
+      ]
+    }
+  }
+]

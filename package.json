@@ -15,7 +15,7 @@
     "dist"
   ],
   "devDependencies": {
-    "@types/chrome": "^0.0.129",
+    "@types/chrome": "^0.0.177",
     "@typescript-eslint/eslint-plugin": "^4.15.2",
     "@typescript-eslint/parser": "^4.15.2",
     "esbuild": "^0.8.46",

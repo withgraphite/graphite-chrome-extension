@@ -19,7 +19,7 @@
     "action": {
       "type": "redirect",
       "redirect": {
-        "regexSubstitution": "https://app.graphite.dev/github/pr/\\1/\\2/\\3"
+        "regexSubstitution": "https://app.graphite.dev/github/pr/\\1/\\2/\\3?from-ext=1"
       }
     },
     "condition": {

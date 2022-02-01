@@ -12,6 +12,12 @@
       }
     ]
   },
+  "action": {
+    "default_title": "Open Graphite"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
   "icons": {
     "16": "icon16.png",
     "48": "icon48.png",

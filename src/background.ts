@@ -1,3 +1,7 @@
+/**
+ * Pause button
+ */
+
 let unpauseTimeout: number | null = null;
 
 chrome.action.onClicked.addListener(function (tab) {
@@ -28,5 +32,17 @@ function unpause() {
   }
   unpauseTimeout = null;
 }
+
+/**
+ * Allow site to see if chrome extension exists
+ */
+
+chrome.runtime.onMessageExternal.addListener(function (
+  request,
+  sender,
+  sendResponse
+) {
+  sendResponse({ ok: true });
+});
 
 export {};

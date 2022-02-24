@@ -1,7 +1,7 @@
 {
   "name": "Graphite",
   "description": "Redirect GitHub links to Graphite",
-  "version": "0.3",
+  "version": "0.4",
   "manifest_version": 3,
   "declarative_net_request": {
     "rule_resources": [
@@ -24,7 +24,8 @@
     "128": "icon128.png"
   },
   "permissions": [
-    "declarativeNetRequestWithHostAccess"
+    "declarativeNetRequestWithHostAccess",
+    "alarms"
   ],
   "host_permissions": [
     "*://github.com/*"

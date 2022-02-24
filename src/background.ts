@@ -2,16 +2,24 @@
  * Pause button
  */
 
-let unpauseTimeout: number | null = null;
+const UNPAUSE_ALARM_NAME = 'UNPAUSE_ALARM';
+let paused = false;
 
 chrome.action.onClicked.addListener(function (tab) {
-  if (unpauseTimeout) {
+  if (paused) {
     unpause();
   } else {
     pause();
-    unpauseTimeout = setTimeout(() => {
-      unpause();
-    }, 5 * 60 * 1000);
+    paused = true;
+    chrome.alarms.create(UNPAUSE_ALARM_NAME, {
+      delayInMinutes: 5,
+    });
+  }
+});
+
+chrome.alarms.onAlarm.addListener((alarm) => {
+  if (alarm.name === UNPAUSE_ALARM_NAME) {
+    unpause();
   }
 });
 
@@ -27,10 +35,10 @@ function unpause() {
     enableRulesetIds: ['primary_ruleset'],
   });
   void chrome.action.setBadgeText({ text: '' });
-  if (unpauseTimeout) {
-    clearTimeout(unpauseTimeout);
+  if (paused) {
+    void chrome.alarms.clear(UNPAUSE_ALARM_NAME);
   }
-  unpauseTimeout = null;
+  paused = false;
 }
 
 /**

@@ -25,6 +25,9 @@
     "condition": {
       "regexFilter": "^https:\\/\\/github.com\\/(.*)\\/(.*)\\/pull\\/([0-9]*)\\/?$",
       "isUrlFilterCaseSensitive": false,
+      "requestMethods": [
+        "get"
+      ],
       "resourceTypes": [
         "main_frame"
       ]

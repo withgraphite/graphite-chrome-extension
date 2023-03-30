@@ -1,39 +1,31 @@
 {
   "name": "Graphite",
   "description": "Redirect GitHub links to Graphite",
-  "version": "0.4",
+  "version": "0.5",
   "manifest_version": 3,
-  "declarative_net_request": {
-    "rule_resources": [
-      {
-        "id": "primary_ruleset",
-        "enabled": true,
-        "path": "rules.json"
-      }
-    ]
-  },
   "action": {
     "default_title": "Open Graphite"
-  },
-  "background": {
-    "service_worker": "background.js"
   },
   "icons": {
     "16": "icon16.png",
     "48": "icon48.png",
     "128": "icon128.png"
   },
-  "permissions": [
-    "declarativeNetRequestWithHostAccess",
-    "alarms"
-  ],
-  "host_permissions": [
-    "*://github.com/*"
-  ],
+  "host_permissions": ["*://github.com/*"],
   "externally_connectable": {
-    "matches": [
-      "https://app.graphite.dev/*",
-      "http://localhost:3000/*"
-    ]
-  }
+    "matches": ["https://app.graphite.dev/*", "http://localhost:3000/*"]
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://github.com/*/*/pull/*"],
+      "js": ["pr-content-script.js"],
+      "runAt": "document_end"
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "matches": ["<all_urls>"],
+      "resources": ["icon.svg"]
+    }
+  ]
 }

@@ -3,7 +3,7 @@ const fs = require('fs-extra');
 
 esbuild
   .build({
-    entryPoints: ['./src/background.ts'],
+    entryPoints: ['./src/background.ts', './src/pr-content-script.ts'],
     bundle: true,
     minify: true,
     sourcemap: process.env.NODE_ENV !== 'production',

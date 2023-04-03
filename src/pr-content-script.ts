@@ -47,7 +47,8 @@ function addMergeWarning() {
   a.style.display = 'block';
   a.href =
     document.URL.replace('github.com', 'app.graphite.dev/github') +
-    '?merge-modal=true';
+    (document.URL.includes('?') ? '&' : '?') +
+    'merge-modal=true';
   a.appendChild(span);
 
   merge.prepend(a);

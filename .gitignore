@@ -11,3 +11,4 @@ dist/
 .eslintcache
 .graphite_repo_config
 .idea/*
+graphite.zip

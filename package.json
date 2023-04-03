@@ -9,6 +9,7 @@
   "scripts": {
     "build": "rm -rf dist/ && NODE_ENV=\"production\" node ./scripts/esbuild.js",
     "lint": "eslint src --quiet --ext .ts --cache",
+    "release": "yarn build && zip graphite.zip dist/*",
     "prepublishOnly": "yarn build"
   },
   "files": [

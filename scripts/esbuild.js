@@ -15,5 +15,7 @@ esbuild
   })
   .then(() => {
     fs.copySync('./public', './dist');
+
+    console.log('🎉 Build complete!');
   })
   .catch(() => process.exit(1));

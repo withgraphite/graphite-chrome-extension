@@ -1,1 +1,2 @@
-* @gregorymfoster @nicholasyan @tomasreimers
+# Default owners. The last matching rule in the file takes precedence, so this first rule is the fall-back rule for non-matching files.
+* @aryamannaik @bngo97 @dbalatero @dbradf @goldjacobe @gregorymfoster @jllugo90 @kushxg @nicholasyan @pranathip @tomasreimers @torasmu @ZiyaoWei

@@ -74,7 +74,6 @@ function addMergeWarning() {
 }
 
 function addGraphiteElements() {
-  console.log('addGraphiteElements');
   addViewOnGraphiteButton();
   addMergeWarning();
 }

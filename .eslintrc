@@ -4,11 +4,22 @@
   "parserOptions": {
     "project": "./tsconfig.json"
   },
-  "plugins": ["@typescript-eslint"],
+  "plugins": [
+    "@typescript-eslint"
+  ],
   "rules": {
+    "no-console": "error",
     "@typescript-eslint/no-floating-promises": "error",
-    "max-lines-per-function": ["error", { "max": 120 }],
-    "@typescript-eslint/explicit-module-boundary-types": "error",
+    "max-lines-per-function": [
+      "error",
+      {
+        "max": 120
+      }
+    ],
+    "@typescript-eslint/explicit-module-boundary-types": "error"
   },
-  "extends": ["eslint:recommended", "plugin:@typescript-eslint/recommended"]
+  "extends": [
+    "eslint:recommended",
+    "plugin:@typescript-eslint/recommended"
+  ]
 }
